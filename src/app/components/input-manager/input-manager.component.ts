@@ -8,11 +8,11 @@ import { ManagedInputDirective } from './managed-input.directive';
   styleUrl: './input-manager.component.scss',
 })
 export class InputManagerComponent {
-  readonly inputs = contentChildren(ManagedInputDirective);
+  readonly inputDirectives = contentChildren(ManagedInputDirective);
 
   clearAll(): void {
-    this.inputs().forEach((input: ManagedInputDirective) => {
-      input.inputElement.value = '';
+    this.inputDirectives().forEach((inputDirective: ManagedInputDirective) => {
+      inputDirective.inputElement.value = '';
     });
   }
 }
